@@ -1,0 +1,16 @@
+postgres:
+  image: postgres
+node:
+  build: .
+  volumes:
+    - .:/code
+    - /code/node_modules
+  links:
+    - postgres
+  environment:
+    TEST_DATABASE_URL: postgres://postgres@postgres/refresh-token-test
+psql:
+  image: postgres
+  links:
+    - postgres
+  command: psql postgres://postgres@postgres
