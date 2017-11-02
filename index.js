@@ -39,8 +39,8 @@ app.use('/qb', qb)
 app.use('/api/xero', api)
 app.use('/api/qb', apiqb)
 
-app.listen(3001, '172.16.230.88', function (err) {
-    console.log('Example router listening on 172.16.230.88:3001!')
+app.listen(3001, 'localhost', function (err) {
+    console.log('Example router listening on localhost:3001!')
 })
 
 module.exports=app
