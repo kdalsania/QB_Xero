@@ -342,7 +342,7 @@ exports.paymentviastripe = async function(req,amount) {
   return new Promise(function (resolve, reject) {
     var options = {
       method: "POST",
-      uri: "http://172.16.160.32.:3030/payment",
+      uri: "http://localhost:3030/payment",
       body: {
                 "gateway":"stripe",
                 "amount" : amount,
@@ -356,7 +356,7 @@ exports.paymentviastripe = async function(req,amount) {
       },
       json: true, // Automatically stringifies the body to JSON
       headers: {
-        "X-api-token" : "sk_test_V8ZICJodc73pjyGVBBzA0Dkb"
+        "X-api-token" : ""
       }
     };
     console.log("########################",options);
@@ -384,7 +384,7 @@ exports.paymentviaauthdotnet = async function(req,amount) {
   return new Promise(function (resolve, reject) {
     var options = {
       method: "POST",
-      uri: "http://172.16.160.32.:3030/payment",
+      uri: "http://localhost:3030/payment",
       body: {
           "gateway":"authdotnet",
            "amount": amount,
@@ -396,8 +396,8 @@ exports.paymentviaauthdotnet = async function(req,amount) {
           },
       json: true, // Automatically stringifies the body to JSON
       headers: {
-        "X-api-token" : "7u2c3W48QS6GgrQH",
-         "x-api-login" :  "6E5bm3MSd"
+        "X-api-token" : "",
+         "x-api-login" :  ""
       }
     };
     console.log("########################",options);
@@ -420,7 +420,7 @@ exports.paymentviapaypal = async function(req,amount) {
   return new Promise(function (resolve, reject) {
     var options = {
       method: "POST",
-      uri: "http://172.16.160.32.:3030/payment",
+      uri: "http://localhost:3030/payment",
       body: {
           "gateway":"paypal",
           "intent": "sale",
@@ -452,8 +452,8 @@ exports.paymentviapaypal = async function(req,amount) {
         },
       json: true, // Automatically stringifies the body to JSON
       headers: {
-        "X-api-token" : "ENZqH3zPXTfSMmbwz7U58wYCOdRlaQKLUv-GhsHA9clcL9l5jHj43lN8aDZJNvk3EZmUOZkpYLOxdcBO",
-         "x-api-login" :  "Ab8KuYyzB2F67ofjjGNWBV3Pmooik890crPqPNIhWeM70WGG3TdaW-MDOycJWYNbHhlNjD0vdxGiI3nV"
+        "X-api-token" : "",
+         "x-api-login" :  ""
       }
     };
     console.log("########################",options.body.payer.funding_instruments[0]);
